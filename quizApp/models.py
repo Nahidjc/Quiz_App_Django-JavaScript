@@ -10,3 +10,6 @@ class Exam(models.Model):
     option3 = models.CharField(max_length=100)
     option4 = models.CharField(max_length=100)
     corrans = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.Question

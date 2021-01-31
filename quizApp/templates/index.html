@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>Simple Quiz App</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#b1").click(function () {
+            $(".rb").show();
+            $(".rb").attr("disabled", true);
+
+
+        });
+    });
+
+
+    function getanswers() {
+        document.getElementById("UserAnswers").innerHTML = "";
+        var e = document.getElementsByTagName("input");
+        for (i = 0; i <= e.length; i++) {
+            if (e[i].type == "radio") {
+                if (e[i].checked) {
+                    document.getElementById("UserAnswers").innerHTML += "Q " + e[i].name + " The Answers You Are Selected Is : " + e[i].value + "<br>";
+
+                }
+            }
+        }
+    }
+</script>
+
+
+</head>
+
+<body>
+    <h1>This is index page</h1>
+</body>
+
+</html>
