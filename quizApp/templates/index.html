@@ -36,7 +36,46 @@
 </head>
 
 <body>
-    <h1>This is index page</h1>
+    <div class="container">
+        <h1 class="text-danger mt-3">Simple Quiz App Using Python Django , Javascript and Jquery</h1>
+        <hr>
+        <div>
+            {% for i in exams %}
+            <table>
+                <tr>
+                    <td class="text-primary">{{i.id}} ) {{i.Question}} ?</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" class="rb" name={{i.id}} id="Option1" value="{{i.Option1}}">{{i.option1}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" class="rb" name={{i.id}} id="Option2" value="{{i.Option2}}">{{i.option2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" class="rb" name={{i.id}} id="Option3" value="{{i.Option3}}">{{i.option3}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" class="rb" name={{i.id}} id="Option4" value="{{i.Option4}}">{{i.option4}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label id="corans" class="rb" style="display:none ; color : green"><b>{{i.corrans}}</b></label>
+                    </td>
+                </tr>
+
+            </table>
+            <hr>
+
+            {% endfor %}
+            <input type="submit" class="btn btn-success" value="Submit" id="b1" onclick="getanswers()">
+            <br>
+            <b id="UserAnswers"></b>
+        </div>
+    </div>
 </body>
 
 </html>
